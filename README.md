@@ -14,19 +14,17 @@ The infrastructure is composed by:
 * Vagrant
 
 # Initial VM Setup
-The Vagrantfiles alredy exist in this project. I put the commands used for creating the Vagrantfiles here for reference:
-
-On each vm directory (api, db, salt-master), run:
+The Vagrantfile already exist in this project. In order to create the VMs execute:
 
 ```bash
-vagrant init ubuntu/focal64
 vagrant up
 ```
 
 ## Cleanup
-When finished working on this project, on each vm directory (api, db, salt-master), run:
+When finished working on this project, execute:
 
 ```bash
 vagrant destroy
 ```
+
 
