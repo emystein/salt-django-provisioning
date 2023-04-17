@@ -6,3 +6,8 @@
 ##########################################
 master: 192.168.56.10
 id: db
+
+postgres.host: pillar['postgresql']['localhost']
+postgres.port: pillar['postgresql']['port']
+postgres.user: pillar['postgresql']['user']
+postgres.pass: pillar['postgresql']['password']
