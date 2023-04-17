@@ -4,3 +4,5 @@ base:
 
     'db':
         - postgresql
+        - payments.db
+
