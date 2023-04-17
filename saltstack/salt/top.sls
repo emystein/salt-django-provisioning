@@ -1,4 +1,6 @@
 base:
     '*':
         - helloworld
-        
+
+    'db':
+        - postgresql
