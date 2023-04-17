@@ -28,3 +28,33 @@ vagrant destroy
 ```
 
 
+
+# Salt
+
+## Configuration
+
+### Master
+```file_roots``` is set to directory ```saltstack/salt``` and ```pillar_roots``` to ```saltstack/pillar```, both settings defined in ```saltstack/etc/master```
+
+## Operation
+Log into Salt master:
+```bash
+vagrant ssh master
+```
+
+Change to root user:
+```bash
+sudo su
+```
+
+Accept the keys of Salt minions:
+```bash
+salt-key -A
+```
+
+Apply the state to all minions:
+```bash
+salt '*' state.apply
+```
+
+
