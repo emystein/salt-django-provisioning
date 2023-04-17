@@ -6,6 +6,5 @@ base:
         - payments
 
     'db':
-        - postgresql
         - payments
 
