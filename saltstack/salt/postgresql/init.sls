@@ -10,9 +10,8 @@ postgresql:
             - file: /etc/postgresql/12/main/pg_hba.conf
 
 # sets a postgresql.conf file with listen_addresses = '*'
-postgresql.conf:
+/etc/postgresql/12/main/postgresql.conf:
     file.managed:
-        - name: /etc/postgresql/12/main/postgresql.conf
         - source: salt://postgresql/postgresql.conf
         - user: postgres
         - group: postgres
@@ -22,9 +21,8 @@ postgresql.conf:
 
 # sets a pg_hba.conf file containing:
 # host    all             all             0.0.0.0/0               md5
-pg_hba.conf:
+/etc/postgresql/12/main/pg_hba.conf:
     file.managed:
-        - name: /etc/postgresql/12/main/pg_hba.conf
         - source: salt://postgresql/pg_hba.conf
         - user: postgres
         - group: postgres
