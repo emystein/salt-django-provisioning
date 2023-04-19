@@ -8,4 +8,4 @@ base:
 
     'api':
         - python
-        - payments.app
+        - payments.api
