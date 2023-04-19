@@ -9,5 +9,8 @@ payments-api-packages:
         - source: salt://payments/api/app.py
         - makedirs: True
 
-
-
+/etc/supervisor/conf.d/payments-api.conf:
+    file.managed:
+        - source: salt://payments/api/supervisor.conf
+        - require:
+            - pkg: supervisor

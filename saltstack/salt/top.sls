@@ -8,4 +8,5 @@ base:
 
     'api':
         - python
+        - supervisor
         - payments.api
