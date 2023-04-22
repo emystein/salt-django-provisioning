@@ -8,6 +8,8 @@ Vagrant.configure("2") do |config|
 
     # Install Salt Master & Minion
     master_config.vm.provision :salt do |salt|
+      salt.install_type = "stable"
+      salt.version = "3005.1"
       salt.install_master = true
       salt.run_highstate = false
 
@@ -23,6 +25,8 @@ Vagrant.configure("2") do |config|
 
     # Install Salt Minion
     config.vm.provision :salt do |salt|
+      salt.install_type = "stable"
+      salt.version = "3005.1"
       salt.run_highstate = false
       salt.minion_config = 'saltstack/etc/minions/db'
    end
@@ -36,6 +40,8 @@ Vagrant.configure("2") do |config|
 
     # Install Salt Minion
     config.vm.provision :salt do |salt|
+      salt.install_type = "stable"
+      salt.version = "3005.1"
       salt.run_highstate = false
       salt.minion_config = 'saltstack/etc/minions/api'
     end

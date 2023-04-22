@@ -5,3 +5,5 @@ supervisor:
         - require:
             - pkg: supervisor
         - enable: True
+        - watch:
+            - file: /etc/supervisor/conf.d/*.conf
