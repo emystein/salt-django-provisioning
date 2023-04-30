@@ -1,12 +1,15 @@
+payments_api_git_repo:
+    git.latest:
+        - name: https://github.com/emystein/stripe-payments-subscriber.git
+        - branch: master
+        - target: /var/www/payments/api/repo
+
 /var/www/payments/api/venv:
   virtualenv.managed:
     - system_site_packages: False
-    - requirements: salt://payments/api/requirements.txt
-
-/var/www/payments/api/app.py:
-    file.managed:
-        - source: salt://payments/api/app.py
-        - makedirs: True
+    - requirements: /var/www/payments/api/repo/requirements.txt
+    - require:
+        - file: /var/www/payments/api/repo/requirements.txt
 
 /var/www/payments/api/start.sh:
     file.managed:
