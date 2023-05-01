@@ -1,0 +1,5 @@
+{% set addresses = salt['mine.get']('db', 'network.ip_addrs') %}
+DATABASE_HOST={{addresses['db'][0]}}
+DATABASE_NAME=payments
+DATABASE_USER=payments
+DATABASE_PASSWORD=payments

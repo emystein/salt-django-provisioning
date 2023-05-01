@@ -4,12 +4,18 @@ payments_api_git_repo:
         - branch: master
         - target: /var/www/payments/api/repo
 
+/var/www/payments/api/repo/payments/.env:
+  file.managed:
+    - source: salt://payments/api/env
+    - makedirs: True
+    - template: jinja
+
 /var/www/payments/api/venv:
   virtualenv.managed:
     - system_site_packages: False
     - requirements: /var/www/payments/api/repo/requirements.txt
     - require:
-        - file: /var/www/payments/api/repo/requirements.txt
+        - git: payments_api_git_repo
 
 /var/www/payments/api/start.sh:
     file.managed:
