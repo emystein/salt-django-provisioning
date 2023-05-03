@@ -1,4 +1,4 @@
 #!/bin/bash
 source /var/www/payments/api/venv/bin/activate
 cd /var/www/payments/api/repo
-gunicorn --bind=0.0.0.0:8000 payments.wsgi
+gunicorn --bind unix:/var/www/payments/api/payments.sock payments.wsgi

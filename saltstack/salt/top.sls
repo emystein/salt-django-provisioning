@@ -9,4 +9,5 @@ base:
     'api':
         - python
         - supervisor
+        - nginx
         - payments.api

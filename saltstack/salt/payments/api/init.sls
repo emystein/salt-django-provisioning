@@ -22,11 +22,16 @@ payments_api_git_repo:
         - source: salt://payments/api/start.sh
         - mode: 0744
         - makedirs: True
+        - require:
+            - git: payments_api_git_repo
+            - virtualenv: /var/www/payments/api/venv
 
 /etc/supervisor/conf.d/payments-api.conf:
     file.managed:
         - source: salt://payments/api/supervisor.conf
         - require:
-            - pkg: supervisor
             - file: /var/www/payments/api/start.sh
 
+/etc/nginx/sites-enabled/payments:
+    file.managed:
+        - source: salt://payments/api/nginx.conf
