@@ -35,3 +35,6 @@ payments_api_git_repo:
 /etc/nginx/sites-enabled/payments:
     file.managed:
         - source: salt://payments/api/nginx.conf
+        - require:
+            - git: payments_api_git_repo
+            - virtualenv: /var/www/payments/api/venv
