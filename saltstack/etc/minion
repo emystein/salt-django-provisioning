@@ -2,6 +2,4 @@
 # brevity sake. Please see https://github.com/saltstack/salt/blob/v0.17.1/conf/minion
 # for possible config options.
 
-##### Primary configuration settings #####
-##########################################
 master: 192.168.56.10
