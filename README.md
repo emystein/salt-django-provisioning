@@ -70,7 +70,7 @@ Accept the keys of Salt minions:
 salt-key -A
 ```
 
-Apply the state to all minions:
+Provision all minions:
 ```bash
 salt '*' state.apply
 ```
