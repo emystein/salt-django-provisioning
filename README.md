@@ -76,3 +76,15 @@ salt '*' state.apply
 ```
 
 
+## Provision Walkthrough
+All the actions described below are performed automatically by Salt during provision.
+
+
+### API
+The application code is cloned from a Github repository into a local directory.
+
+The application relies on an ```.env``` file, which is filled with information read by Salt from Pillar and Mine.
+
+Salt Pillar contains DB credentials.
+
+Salt Mine provides the IP address of each machine, in particular the IP address of the DB server. Salt uses the DB IP address informed by Mine and fills the DB host parameter in the ```.env``` file.
