@@ -1,14 +1,32 @@
 # Payment queue provisioning
-Example Salt states for provision the infrastructure of a REST API implemented in Python with SQL persistence.
+Example Salt states for provisioning the infrastructure of a REST API implemented in Python with SQL persistence.
 
-The infrastructure is composed by:
+# Infrastructure
 
-* Salt master machine
-* REST API machine (running a Salt minion)
-* PostgreSQL machine (running a Salt minion)
- 
+## DB
+The DB used is PostgreSQL and runs in a single machine.
+
+## REST API
+The API runs on a single machine.
+
+The API uses the database from the DB machine.
+
+The API is configured as a WSGI application and executed by gunicorn.
+
+The gunicorn instance is watched by the supervisor service.
+
+Nginx runs as a reverse proxy of gunicorn.
+
+## Salt
+Salt runs on:
+
+* A Salt master machine
+* The REST API machine (running a Salt minion)
+* The DB machine (running a Salt minion)
+
+
 # Prerequisites
-* Python 3.10
+* Python 
 * Ruby
 * VirtualBox
 * Vagrant
@@ -24,7 +42,7 @@ vagrant up
 When finished working on this project, execute:
 
 ```bash
-vagrant destroy
+vagrant destroy -f
 ```
 
 
