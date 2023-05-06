@@ -1,4 +1,5 @@
 #!/bin/bash
-source /var/www/payments/api/venv/bin/activate
-cd /var/www/payments/api/repo
-gunicorn --bind unix:/var/www/payments/api/payments.sock payments.wsgi
+PAYMENTS_API_ROOT_DIRECTORY=/var/www/payments/api
+source $PAYMENTS_API_ROOT_DIRECTORY/venv/bin/activate
+cd $PAYMENTS_API_ROOT_DIRECTORY/repo
+gunicorn --bind unix:$PAYMENTS_API_ROOT_DIRECTORY/payments.sock payments.wsgi
