@@ -29,13 +29,8 @@ payments_api_git_repo:
 /etc/supervisor/conf.d/payments-api.conf:
     file.managed:
         - source: salt://payments/api/supervisor.conf
-
-extend:
-    supervisor:
-        service.running:
-            - require:
-                - file: /etc/supervisor/conf.d/payments-api.conf
-                - file: /var/www/payments/api/start.sh
+        - require:
+            - file: /var/www/payments/api/start.sh
 
 /etc/nginx/sites-enabled/payments:
     file.managed:
