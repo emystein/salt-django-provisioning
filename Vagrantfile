@@ -1,7 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-VM_BOX = "generic/ubuntu2004"
+# VM_BOX = "generic/ubuntu2004"
+VM_BOX = "ubuntu/focal64"
 
 Vagrant.configure("2") do |config|
   config.vm.define :master, primary: true do |master_config|
