@@ -28,7 +28,9 @@ Salt runs on:
 # Prerequisites
 * Python 
 * Ruby
-* VirtualBox
+* A VM Manager, either:
+** VirtualBox or
+** libvirt with vagrant-libvirt Vagrant plugin installed(vagrant plugin install vagrant-libvirt)
 * Vagrant
 
 # Initial VM Setup
