@@ -1,4 +1,4 @@
-# Payment queue provisioning
+# Django app provisioning using Salt
 Example Salt states for provisioning the infrastructure of a REST API implemented in Python with SQL persistence.
 
 # Infrastructure
