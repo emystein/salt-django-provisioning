@@ -1,6 +1,6 @@
 payments_api_git_repo:
     git.latest:
-        - name: https://github.com/emystein/stripe-payments-subscriber.git
+        - name: https://github.com/emystein/django-rest-example.git
         - branch: master
         - target: /var/www/payments/api/repo
 
